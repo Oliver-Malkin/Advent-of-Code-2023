@@ -7,10 +7,7 @@ data = data.split("\n")
 sum = 0
 
 for i in data:
-    temp = re.sub("[^0-9]", "", i)
-    if len(temp) == 1:
-        sum += int(temp*2) # two number
-    else:
-        sum += int(temp[0] + temp[len(temp)-1]) # first and last
+    temp = re.sub("[^0-9]", "", i) # strip the characters away
+    sum += int(temp[0] + temp[-1]) # first and last
 
 print(sum)
