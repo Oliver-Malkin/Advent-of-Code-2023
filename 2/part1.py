@@ -13,8 +13,8 @@ with open("input.txt", "r") as file:
 
 j = 1
 for i in data:
-    game = i.split(': ')
-    del game[0] # removes the game number
+    # Get each game into a list ['3 blue, 4 red', '1 red, 2 green, 6 blue', '2 green']
+    game = i.split(': ')[1:]
     game = game[0].split('; ')
 
     valid = True
