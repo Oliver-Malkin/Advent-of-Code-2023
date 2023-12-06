@@ -33,3 +33,6 @@
 
 # VSCode directory
 /.vscode
+
+# misc
+*.txt
