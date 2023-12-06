@@ -12,7 +12,6 @@ for i in range(0, len(seeds), 2):
 
 seeds = new_seeds
 
-# Don't change anything past this
 data = data[2:]
 
 temp = []
