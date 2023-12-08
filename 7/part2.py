@@ -61,7 +61,7 @@ for i in range(0, len(data), 2):
     if count[-1][1] == "J":
         try:
             mapped_hand_j = mapped_hand.replace(value_map['J'], value_map[count[-2][1]])
-        except IndexError:
+        except IndexError: # Only J's in the hand
             mapped_hand_j = mapped_hand.replace(value_map['J'], value_map[count[-1][1]])
     else:
         mapped_hand_j = mapped_hand.replace(value_map['J'], value_map[count[-1][1]])
@@ -101,10 +101,10 @@ total = 0
 # lists in order of best to worst
 
 # yes this is ugly : )
-sorted = sorted(five, key=lambda x: x[0]) + sorted(four, key=lambda x: x[0]) + sorted(house, key=lambda x: x[0]) + sorted(three, key=lambda x: x[0]) + sorted(two_pair, key=lambda x: x[0]) + sorted(pair, key=lambda x: x[0]) + sorted(high_card, key=lambda x: x[0])
-sorted = sorted[::-1]
+sorted_result = sorted(five, key=lambda x: x[0]) + sorted(four, key=lambda x: x[0]) + sorted(house, key=lambda x: x[0]) + sorted(three, key=lambda x: x[0]) + sorted(two_pair, key=lambda x: x[0]) + sorted(pair, key=lambda x: x[0]) + sorted(high_card, key=lambda x: x[0])
+sorted_result = sorted_result[::-1]
 
-for i, hand in enumerate(sorted):
+for i, hand in enumerate(sorted_result):
     total += int(hand[1])*(i+1)
 
 print(total)
